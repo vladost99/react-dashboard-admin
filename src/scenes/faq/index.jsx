@@ -16,7 +16,7 @@ const FAQ = () => {
     <Box m="20px">
       <Header title="FAQ" subtitle="Frequently Asked Questions Page" />
 
-      <Accordion>
+      <Accordion  defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
             An Important Question
@@ -31,7 +31,7 @@ const FAQ = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion>
+      <Accordion  defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
             Another Important Question
@@ -46,7 +46,7 @@ const FAQ = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion>
+      <Accordion  defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
           Your favorite Qeustion
@@ -61,7 +61,7 @@ const FAQ = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion>
+      <Accordion  defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
             Some Random Question
@@ -76,7 +76,7 @@ const FAQ = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion>
+      <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
            The Final Question
