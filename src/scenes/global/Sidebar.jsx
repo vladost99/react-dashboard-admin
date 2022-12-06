@@ -1,7 +1,7 @@
 import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar'
 import { Box, IconButton, Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import useColorTheme from 'hooks/useColorTheme'
 import 'react-pro-sidebar/dist/css/styles.css'
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -23,11 +23,11 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   const { colors } = useColorTheme();
   return (
     <MenuItem
-      active={selected === title}
+      active={selected === to}
       style={{
         color: colors.grey[100],
       }}
-      onClick={() => setSelected(title)}
+      onClick={() => setSelected(to)}
       icon={icon}
     >
       <Typography>{title}</Typography>
@@ -40,7 +40,12 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 const Sidebar = () => {
   const { colors } = useColorTheme();
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [selected, setSelected] = useState("Dashboard");
+  const [selected, setSelected] = useState('/');
+  const location = useLocation();
+
+  useEffect(() => {
+    setSelected(location.pathname);
+  }, []);
 
   return (
     <Box
